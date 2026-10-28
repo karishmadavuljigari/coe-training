@@ -1,4 +1,3 @@
-
 import argparse
 import sys
 from collections import Counter
@@ -27,9 +26,7 @@ def read_file(filename):
 
 def main(argv=None):
     """Read command-line arguments and count the most common words."""
-    parser = argparse.ArgumentParser(
-        description="Count words in a text file"
-    )
+    parser = argparse.ArgumentParser(description="Count words in a text file")
 
     parser.add_argument("filename")
     parser.add_argument("--top", type=int, default=5)
