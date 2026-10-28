@@ -1,8 +1,8 @@
 # Import the functions we want to test from wordstat.py
-from wordstat import clean_words, read_file, main
-
 # Import pytest to use its testing features
 import pytest
+
+from wordstat import clean_words, main, read_file
 
 
 # Test 1: Check whether words are converted to lowercase
