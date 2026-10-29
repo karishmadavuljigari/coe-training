@@ -1,0 +1,8 @@
+2026-10-29 09:00:00 INFO Application started
+2026-10-29 09:01:00 WARNING Disk space is running low
+2026-10-29 09:02:00 ERROR Database connection failed
+2026-10-29 09:03:00 INFO Retry attempt started
+2026-10-29 09:04:00 ERROR Database connection failed
+2026-10-29 09:05:00 CRITICAL Server unavailable
+2026-10-29 09:06:00 DEBUG Checking server health
+2026-10-29 09:07:00 INFO Application stopped
