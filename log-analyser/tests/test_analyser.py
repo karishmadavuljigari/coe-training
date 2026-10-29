@@ -71,7 +71,6 @@ def test_top_errors():
     ]
 
 
-
 def test_get_time_range():
     entries = [
         LogEntry(
@@ -90,8 +89,6 @@ def test_get_time_range():
 
     assert start_time == datetime(2026, 10, 29, 9, 0, 0)
     assert end_time == datetime(2026, 10, 29, 9, 5, 0)
-
-
 
 
 def test_analyse_entries():
@@ -118,14 +115,11 @@ def test_analyse_entries():
     assert summary.malformed_lines == 0
 
 
-
 def test_get_time_range_empty_entries():
     start_time, end_time = get_time_range([])
 
     assert start_time is None
     assert end_time is None
-
-
 
 
 def test_analyse_lines_counts_malformed_lines():
@@ -143,9 +137,6 @@ def test_analyse_lines_counts_malformed_lines():
     assert summary.malformed_lines == 2
 
 
-
-
-
 def test_analyse_sample_log_file():
     log_path = Path("log-analyser/data/sample.log")
 
@@ -158,7 +149,6 @@ def test_analyse_sample_log_file():
     assert summary.level_counts["INFO"] == 3
     assert summary.level_counts["ERROR"] == 2
     assert summary.malformed_lines == 0
-
 
 
 def test_summary_to_dict():
@@ -179,8 +169,6 @@ def test_summary_to_dict():
     assert result["start_time"] == "2026-10-29T09:00:00"
     assert result["end_time"] == "2026-10-29T09:02:00"
     assert result["malformed_lines"] == 1
-
-
 
 
 def test_write_summary_json(tmp_path):

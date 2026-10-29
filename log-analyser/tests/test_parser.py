@@ -1,7 +1,7 @@
-
 from datetime import datetime
 
 import pytest
+
 from log_analyser.exceptions import InvalidLogLineError
 from log_analyser.parser import parse_log_line
 
@@ -30,7 +30,6 @@ def test_parse_invalid_log_level():
         parse_log_line(line)
 
 
-
 def test_parse_empty_message():
     line = "2026-10-29 09:01:00 ERROR "
 
@@ -38,13 +37,11 @@ def test_parse_empty_message():
         parse_log_line(line)
 
 
-
 def test_parse_incomplete_log_line():
     line = "2026-10-29 ERROR"
 
     with pytest.raises(InvalidLogLineError):
         parse_log_line(line)
-
 
 
 def test_parse_info_log_line():
@@ -56,7 +53,6 @@ def test_parse_info_log_line():
     assert entry.message == "Application started"
 
 
-
 def test_parse_critical_log_line():
     line = "2026-10-29 11:45:00 CRITICAL Server unavailable"
 
@@ -64,7 +60,6 @@ def test_parse_critical_log_line():
 
     assert entry.level == "CRITICAL"
     assert entry.message == "Server unavailable"
-
 
 
 def test_parse_message_with_multiple_words():
