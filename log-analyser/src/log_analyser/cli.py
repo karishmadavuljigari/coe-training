@@ -1,4 +1,3 @@
-
 import logging
 from pathlib import Path
 
@@ -30,9 +29,7 @@ def main() -> None:
         logging.info("JSON summary saved to %s", DEFAULT_OUTPUT)
 
     except OSError:
-        logging.exception(
-            "Could not read the input file or write the output file."
-        )
+        logging.exception("Could not read the input file or write the output file.")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,3 @@
-
 from datetime import datetime
 
 from log_analyser.exceptions import InvalidLogLineError
@@ -15,9 +14,7 @@ def parse_log_line(line: str) -> LogEntry:
     timestamp_text = f"{parts[0]} {parts[1]}"
 
     try:
-        timestamp = datetime.strptime(
-            timestamp_text, "%Y-%m-%d %H:%M:%S"
-        )
+        timestamp = datetime.strptime(timestamp_text, "%Y-%m-%d %H:%M:%S")
     except ValueError as error:
         raise InvalidLogLineError("Invalid timestamp") from error
 

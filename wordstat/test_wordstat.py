@@ -1,9 +1,8 @@
-
 # Import the functions we want to test from wordstat.py
-from wordstat import clean_words, read_file, main
-
 # Import pytest to use its testing features
 import pytest
+
+from wordstat import clean_words, main, read_file
 
 
 # Test 1: Check whether words are converted to lowercase
@@ -79,6 +78,8 @@ def test_read_file_missing_file(tmp_path):
     # when it cannot find the file.
     with pytest.raises(SystemExit):
         read_file(str(file_path))
+
+
 def test_main_empty_file(tmp_path, capsys):
     # Create an empty text file
     file_path = tmp_path / "empty.txt"

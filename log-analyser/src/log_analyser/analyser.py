@@ -12,17 +12,12 @@ def count_levels(entries: list[LogEntry]) -> Counter[str]:
     return Counter(entry.level for entry in entries)
 
 
-
 def top_errors(entries: list[LogEntry], limit: int = 5) -> list[tuple[str, int]]:
     error_messages = [
-        entry.message
-        for entry in entries
-        if entry.level in {"ERROR", "CRITICAL"}
+        entry.message for entry in entries if entry.level in {"ERROR", "CRITICAL"}
     ]
 
     return Counter(error_messages).most_common(limit)
-
-
 
 
 def get_time_range(
@@ -34,7 +29,6 @@ def get_time_range(
     timestamps = [entry.timestamp for entry in entries]
 
     return min(timestamps), max(timestamps)
-
 
 
 def analyse_entries(entries: list[LogEntry]) -> AnalysisSummary:
@@ -49,8 +43,6 @@ def analyse_entries(entries: list[LogEntry]) -> AnalysisSummary:
         end_time=end_time,
         malformed_lines=0,
     )
-
-
 
 
 def analyse_lines(lines: list[str]) -> AnalysisSummary:
@@ -68,8 +60,6 @@ def analyse_lines(lines: list[str]) -> AnalysisSummary:
     summary.malformed_lines = malformed_count
 
     return summary
-
-
 
 
 def write_summary_json(

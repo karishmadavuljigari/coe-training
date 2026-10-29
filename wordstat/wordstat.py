@@ -1,8 +1,8 @@
-
 import argparse
+import string
 import sys
 from collections import Counter
-import string
+from pathlib import Path
 
 
 def clean_words(text):
@@ -16,7 +16,7 @@ def clean_words(text):
 def read_file(filename):
     """Read the contents of a text file."""
     try:
-        with open(filename, "r", encoding="utf-8") as file:
+        with Path(filename).open(encoding="utf-8") as file:
             text = file.read()
     except FileNotFoundError:
         print(f"Error: file '{filename}' not found.")
@@ -27,9 +27,7 @@ def read_file(filename):
 
 def main(argv=None):
     """Read command-line arguments and count the most common words."""
-    parser = argparse.ArgumentParser(
-        description="Count words in a text file"
-    )
+    parser = argparse.ArgumentParser(description="Count words in a text file")
 
     parser.add_argument("filename")
     parser.add_argument("--top", type=int, default=5)
