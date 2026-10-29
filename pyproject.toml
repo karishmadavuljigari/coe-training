@@ -64,4 +64,5 @@ pythonpath = ["."]
 addopts = "-ra --strict-markers --strict-config"
 
 [tool.pyright]
-typeCheckingMode = "standard"   # move to "strict" once the team is comfortable
+typeCheckingMode = "standard"
+extraPaths = ["log-analyser/src", "."]
